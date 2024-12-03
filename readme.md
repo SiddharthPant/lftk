@@ -6,12 +6,11 @@
 <img alt="Read the Docs" src="https://img.shields.io/readthedocs/lftk"></a>
 <img alt="Language" src="https://img.shields.io/github/languages/top/brucewlee/lftk?style=plastic"></a>
 <img alt="Available Features" src="https://img.shields.io/badge/Linguistic%20Feature%20Count-220-yellowgreen"></a>
-<img src="assets/logo-color.png" width="250" align="right">
 
 # LFTK: Handcrafted Features in Computational Linguistics
 
 - **:microscope: Comprehensive**: LFTK is a Python research package that extracts various handcrafted features (e.g. number of words per sentence, Flesch-Kincaid Readabiility Score) that are commonly used in computational linguistics. 
-- **:fire: Blazing Fast**: Extracting more than 200 handcrafted features takes less than 0.01 sec per word. Much faster than LFTK's predecessor, [LingFeat](https://github.com/brucewlee/lingfeat). This time is reported excluding spaCy processing time, which is not contained in LFTK.
+- **:fire: Blazing Fast**: Extracting more than 200 handcrafted features takes less than 0.01 sec per word. Much faster than LFTK's predecessor, [LingFeat](https://github.com/brucewlee/lingfeat). This time is reported excluding spaCy processing time, which is not a part of LFTK.
 - **:rocket: Do More with SpaCy**: LFTK is built on top of a popular NLP library named [spaCy](https://spacy.io). Explore spaCy's pre-trained pipelines and get the most out of spaCy.
 
 LFTK can calculate readability score, evaluate word difficulty, count number of nouns, and many more. There is much to explore in this package. Use our handcrafted features to support linguistic studies or build machine learning models.
@@ -33,33 +32,9 @@ pip install spacy
 python -m spacy download en_core_web_sm
 ```
 
-## Citation
-```
-@inproceedings{lee-lee-2023-lftk,
-    title = "{LFTK}: Handcrafted Features in Computational Linguistics",
-    author = "Lee, Bruce W.  and Lee, Jason",
-    booktitle = "Proceedings of the 18th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2023)",
-    month = jul,
-    year = "2023",
-    address = "Toronto, Canada",
-    publisher = "Association for Computational Linguistics",
-    url = "https://aclanthology.org/2023.bea-1.1",
-    pages = "1--19",
-    abstract = "Past research has identified a rich set of handcrafted linguistic features that can potentially assist various tasks. However, their extensive number makes it difficult to effectively select and utilize existing handcrafted features. Coupled with the problem of inconsistent implementation across research works, there has been no categorization scheme or generally-accepted feature names. This creates unwanted confusion. Also, no actively-maintained open-source library extracts a wide variety of handcrafted features. The current handcrafted feature extraction practices have several inefficiencies, and a researcher often has to build such an extraction system from the ground up. We collect and categorize more than 220 popular handcrafted features grounded on past literature. Then, we conduct a correlation analysis study on several task-specific datasets and report the potential use cases of each feature. Lastly, we devise a multilingual handcrafted linguistic feature extraction system in a systematically expandable manner. We open-source our system to give the community a rich set of pre-implemented handcrafted features.",
-}
-```
-
 ## News
-- We have the first round of use cases. Thank you for using LFTK!
-    - ICMI 2023 [Gaze-Driven Sentence Simplification for Language Learners:
-Enhancing Comprehension and Readability](https://dl.acm.org/doi/pdf/10.1145/3610661.3616177?casa_token=0aIJ12pNqEIAAAAA:0i5IxerGtwGtuH9VGQ1yWiHT1YPTfaUdApTGGhdGhwgnbSKIoeafxwcVDRcMyOoEPzAT4bKCuQeIhw) 
-    - Preprint [Benchmarking and Explaining Large Language Model-based Code
-Generation: A Causality-Centric Approach](https://arxiv.org/pdf/2310.06680.pdf)
-    - SLaTE 2023 [Effective Neural Modeling Leveraging Readability Features for
-Automated Essay Scoring](https://www.isca-speech.org/archive/pdfs/slate_2023/wu23_slate.pdf)
-    - Preprint [Large Language Models and Financial Market Sentiment](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4584928)
-- Come join our presentation at BEA @ ACL 2023.
-- Preprint available on ArXiv! [Here](https://arxiv.org/abs/2305.15878)
+- Presentation at BEA @ ACL 2023.
+- Preprint available on ArXiv. [Here](https://arxiv.org/abs/2305.15878)
 - v.1.0.9 -> Documentation update! Keep track of our progress.
 - v.1.0.8 -> 7 features that extracts conjunctions are deleted. These features are replaced by those extractin subordinating conjunctions and coordinating conjunections.
 
@@ -195,4 +170,23 @@ Then, you can call the usual extraction function,
 
 ```Python
 extracted_features = LFTK.extract(features = result)
+```
+
+## Publications
+LFTK has been used in the following publications. If you don't see your paper on the list, but you used LFTK, let us know, and we'll add it to the list!
+
+## Citation
+```
+@inproceedings{lee-lee-2023-lftk,
+    title = "{LFTK}: Handcrafted Features in Computational Linguistics",
+    author = "Lee, Bruce W.  and Lee, Jason",
+    booktitle = "Proceedings of the 18th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2023)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.bea-1.1",
+    pages = "1--19",
+    abstract = "Past research has identified a rich set of handcrafted linguistic features that can potentially assist various tasks. However, their extensive number makes it difficult to effectively select and utilize existing handcrafted features. Coupled with the problem of inconsistent implementation across research works, there has been no categorization scheme or generally-accepted feature names. This creates unwanted confusion. Also, no actively-maintained open-source library extracts a wide variety of handcrafted features. The current handcrafted feature extraction practices have several inefficiencies, and a researcher often has to build such an extraction system from the ground up. We collect and categorize more than 220 popular handcrafted features grounded on past literature. Then, we conduct a correlation analysis study on several task-specific datasets and report the potential use cases of each feature. Lastly, we devise a multilingual handcrafted linguistic feature extraction system in a systematically expandable manner. We open-source our system to give the community a rich set of pre-implemented handcrafted features.",
+}
 ```
